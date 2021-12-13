@@ -7,14 +7,14 @@ Resource        resources.robot
 Test Teardown   Close Browser
 
 *** Test Cases ***
-Valid Login
+Wrong Password
     Open Browser To Login Page
     # input username
     Input Username  ${VALID USER}
-    # input password
-    Input Password  ${VALID PASSWORD}
+    # input passwordInput
+    Input Password  ${INVALID PASSWORD}
     # click login button
     Submit Credentials
-    # page should contain element 
-    Login Should Be Successful
+    # page should display error message
+    Login Should Have Failed
     

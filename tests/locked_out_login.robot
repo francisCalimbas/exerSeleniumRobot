@@ -7,14 +7,14 @@ Resource        resources.robot
 Test Teardown   Close Browser
 
 *** Test Cases ***
-Valid Login
+Locked Out Login
     Open Browser To Login Page
     # input username
-    Input Username  ${VALID USER}
-    # input password
+    Input Username  ${LOCKED OUT USER}
+    # input passwordInput
     Input Password  ${VALID PASSWORD}
     # click login button
     Submit Credentials
-    # page should contain element 
-    Login Should Be Successful
+    # page should contain element
+    Error Message Shown
     
