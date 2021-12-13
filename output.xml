@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211213 17:29:06.025" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\Francis\Documents\GitHub\exerSeleniumRobot\tests">
+<suite id="s1-s1" name="Valid Login" source="C:\Users\Francis\Documents\GitHub\exerSeleniumRobot\tests\valid_login.robot">
+<test id="s1-s1-t1" name="Valid Login">
+<kw name="Open Browser https://www.saucedemo.com/">
+<arg>brave</arg>
+<msg timestamp="20211213 17:29:06.226" level="FAIL">No keyword with name 'Open Browser https://www.saucedemo.com/' found.</msg>
+<status status="FAIL" starttime="20211213 17:29:06.226" endtime="20211213 17:29:06.226"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20211213 17:29:06.227" endtime="20211213 17:29:06.227"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>login-button</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20211213 17:29:06.227" endtime="20211213 17:29:06.227"/>
+</kw>
+<kw name="Input Text user-name">
+<arg>standard_user</arg>
+<status status="NOT RUN" starttime="20211213 17:29:06.230" endtime="20211213 17:29:06.230"/>
+</kw>
+<kw name="Password password">
+<arg>secret_sauce</arg>
+<status status="NOT RUN" starttime="20211213 17:29:06.232" endtime="20211213 17:29:06.232"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211213 17:29:06.233" endtime="20211213 17:29:06.233"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>id:inventory_container</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20211213 17:29:06.233" endtime="20211213 17:29:06.233"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211213 17:29:06.233" endtime="20211213 17:29:06.233"/>
+</kw>
+<status status="FAIL" starttime="20211213 17:29:06.223" endtime="20211213 17:29:06.233">No keyword with name 'Open Browser https://www.saucedemo.com/' found.</status>
+</test>
+<doc>Documentation A test suite with a single test for valid login
+
+This test follows the exmaple using keywords from
+the SeleniumLibrary</doc>
+<status status="FAIL" starttime="20211213 17:29:06.044" endtime="20211213 17:29:06.234"/>
+</suite>
+<status status="FAIL" starttime="20211213 17:29:06.026" endtime="20211213 17:29:06.235"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Valid Login">Tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
