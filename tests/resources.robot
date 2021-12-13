@@ -11,15 +11,23 @@ ${BROWSER}              edge
 ${DELAY}                0
 ${VALID USER}           standard_user
 ${LOCKED OUT USER}      locked_out_user
+${PROBLEM USER}         problem_user
 ${VALID PASSWORD}       secret_sauce
 ${LOGIN URL}            https://${SERVER}/
 ${HOME URL}             https://${SERVER}/inventory.html
 ${INVALID PASSWORD}     oraoraora
+${ERROR IMAGE}          https://www.saucedemo.com/static/media/sl-404.168b1cce.jpg
+${SELECT FILTER}        xpath://*[@id="header_container"]/div[2]/div[2]/span/select
+${OPTION A-Z}           xpath://*[@id="header_container"]/div[2]/div[2]/span/select/option[1]
+${OPTION Z-A}           xpath://*[@id="header_container"]/div[2]/div[2]/span/select/option[2]
+${OPTION LOHI}          xpath://*[@id="header_container"]/div[2]/div[2]/span/select/option[3]
+${OPTION HILO}          xpath://*[@id="header_container"]/div[2]/div[2]/span/select/option[4]
+
 
 *** Keywords ***
 Open Browser To Login Page
      # open browser
-    Open Browser    ${LOGIN URL}     edge
+    Open Browser    ${LOGIN URL}     ${BROWSER}
     # set window size
     Maximize Browser Window
     Set Selenium Speed      ${DELAY}
@@ -31,7 +39,6 @@ Login Page Should Be Open
 
 Product Page Should Be Open
     Element Text Should Be      class:title     PRODUCTS
-    #Element Text Should Be    xpath://*[@id="login_button_container"]/div/form/div[3]/h3    Epic sadface: Sorry, this user has been locked out.
 
 Input Username
     [Arguments]     ${username}
@@ -46,6 +53,7 @@ Input Password
 Submit Credentials
     Click Button    login-button
 
+# used in locked_out_login.robot
 Error Message Shown
     # page should contain element
     Page Should Contain Element    class:error-message-container
@@ -58,3 +66,12 @@ Login Should Be Successful
 
 Login Should Have Failed
     Element Text Should Be    xpath://*[@id="login_button_container"]/div/form/div[3]/h3   Epic sadface: Username and password do not match any user in this service
+
+# used in problem_user.robot
+Logged In As Problem User
+    Element Attribute Value Should Be       xpath://*[@id="item_4_img_link"]/img    src    ${ERROR IMAGE}
+    Element Attribute Value Should Be       xpath://*[@id="item_0_img_link"]/img    src    ${ERROR IMAGE}
+    Element Attribute Value Should Be       xpath://*[@id="item_1_img_link"]/img    src    ${ERROR IMAGE}
+    Element Attribute Value Should Be       xpath://*[@id="item_2_img_link"]/img    src    ${ERROR IMAGE}
+    Element Attribute Value Should Be       xpath://*[@id="item_3_img_link"]/img    src    ${ERROR IMAGE}
+    Element Attribute Value Should Be       xpath://*[@id="item_5_img_link"]/img    src    ${ERROR IMAGE}
